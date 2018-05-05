@@ -1,8 +1,28 @@
-.App {
+h1 {
     text-align: center;
 }
 
 .EnrollForm {
     border: 1px solid gray;
     padding: 20px;
+    margin-bottom: 10px;
+}
+
+.StorageData {
+    display: flex;
+    flex-direction: row;
+}
+
+.ElectoralList {
+    border: 1px solid gray;
+    text-align: center;
+    padding: 20px;
+    margin-right: 5px;
+}
+
+.ElectoralCount {
+    border: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+    margin-left: 5px;
 }

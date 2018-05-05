@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Styles.css';
+import storage from '../contract/storage';
+import web3 from '../contract/web3';
 
 const INITIAL_STATE = {
   address: '',
@@ -18,15 +20,14 @@ class EnrollForm extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
-    const {
-      address,
-      voterID,
-    } = this.state;
+  onSubmit = async (event) => {
+    event.preventDefault();
 
-    const {
-      history,
-    } = this.props;
+    const accounts = await web3.eth.getAccounts();
+    const status = await storage.methods.registerOnce(this.state.address, this.state.voterID).send({
+      from: accounts[0]
+    });
+    console.log(status);
   }
 
   render() {
@@ -45,7 +46,7 @@ class EnrollForm extends Component {
       voterID.length !== 5;
 
     return (
-      <form onSubmit={this.onSubmit} className="EnrollForm col-md-4 offset-md-4">
+      <form onSubmit={this.onSubmit} className="EnrollForm col-md-4">
         <div className="form-group">
           <label>Address
           <input
