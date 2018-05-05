@@ -24,7 +24,9 @@ class StorageData extends Component {
       <div className="StorageData">
         <div className="ElectoralList">
           <h3> Electoral List </h3>
-          {this.state.electoralList}
+          {this.state.electoralList.map(element =>
+            <li key={element}>{element}</li>
+          )}
         </div>
         <div className="ElectoralCount">
           <h3> Electoral Count </h3>

@@ -2,10 +2,32 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+.Enroll {
+    display: flex;
+    flex-direction: row;
+}
+
 .EnrollForm {
     border: 1px solid gray;
     padding: 20px;
-    margin-bottom: 10px;
+    margin: 10px 0px;
+    margin-right: 5px;
+}
+
+.EnrollStatus {
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 10px 0px;
+    margin-left: 5px;
+    word-wrap: break-word;
 }
 
 .StorageData {
@@ -18,6 +40,7 @@ h1 {
     text-align: center;
     padding: 20px;
     margin-right: 5px;
+    float: right;
 }
 
 .ElectoralCount {
@@ -25,4 +48,5 @@ h1 {
     padding: 20px;
     text-align: center;
     margin-left: 5px;
+    height: 100px;
 }

@@ -6,6 +6,7 @@ import web3 from '../contract/web3';
 const INITIAL_STATE = {
   address: '',
   voterID: '',
+  status: '',
   error: null,
 };
 
@@ -27,7 +28,7 @@ class EnrollForm extends Component {
     const status = await storage.methods.registerOnce(this.state.address, this.state.voterID).send({
       from: accounts[0]
     });
-    console.log(status);
+    this.setState({ status: JSON.stringify(status) });
   }
 
   render() {
@@ -46,40 +47,55 @@ class EnrollForm extends Component {
       voterID.length !== 5;
 
     return (
-      <form onSubmit={this.onSubmit} className="EnrollForm col-md-4">
-        <div className="form-group">
-          <label>Address
+      <div className="Enroll">
+        <form onSubmit={this.onSubmit} className="EnrollForm col-md-5">
+          <h3> Enroll </h3>
+          <div className="form-group">
+            <label>Address
           <input
-              value={address}
-              onChange={event => this.setState(byPropKey('address', event.target.value))}
-              type="text"
-              className="form-control"
-              placeholder="Address"
-            />
-          </label>
-        </div>
-        <div className="form-group">
-          <label>Voter ID
+                value={address}
+                onChange={event => this.setState(byPropKey('address', event.target.value))}
+                type="text"
+                className="form-control"
+                placeholder="Address"
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label>Voter ID
           <input
-              value={voterID}
-              onChange={event => this.setState(byPropKey('voterID', event.target.value))}
-              type="text"
-              className="form-control"
-              placeholder="Voter ID"
-            />
-          </label>
-        </div>
-        <button disabled={isValid} type="submit" className="btn">
-          Submit
+                value={voterID}
+                onChange={event => this.setState(byPropKey('voterID', event.target.value))}
+                type="text"
+                className="form-control"
+                placeholder="Voter ID"
+              />
+            </label>
+          </div>
+          <button disabled={isValid} type="submit" className="btn">
+            Submit
         </button>
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p>{error.message}</p>}
+        </form>
+        <div className="EnrollStatus col-md-8">
+          <h3> Status </h3>
+          <h6> {this.state.status} </h6>
+        </div>
+      </div>
     );
   }
 }
 
-
 export default EnrollForm;
+
+
+/* transactionHash: '',
+transactionIndex: '',
+blockHash: '',
+blockNumber: '',
+gasUsed: '',
+status: '' */
+
 
 /* class EnrollForm extends Component {
   constructor(props) {
