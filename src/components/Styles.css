@@ -2,6 +2,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 h3 {
     text-align: center;
 }
@@ -9,6 +13,8 @@ h3 {
 li {
     list-style-type: none;
 }
+
+/* Enroll Componene */
 
 .Enroll {
     display: flex;
@@ -30,6 +36,8 @@ li {
     word-wrap: break-word;
 }
 
+/* Storage Component */
+
 .StorageData {
     display: flex;
     flex-direction: row;
@@ -39,7 +47,7 @@ li {
     border: 1px solid gray;
     text-align: center;
     padding: 20px;
-    margin-right: 5px;
+    margin-right: 3px;
     float: right;
 }
 
@@ -47,6 +55,12 @@ li {
     border: 1px solid gray;
     padding: 20px;
     text-align: center;
-    margin-left: 5px;
+    margin: 0px 2px;
     height: 100px;
+}
+
+.GetIdForm {
+    border: 1px solid gray;
+    margin-left: 3px;
+    height: 250px;
 }

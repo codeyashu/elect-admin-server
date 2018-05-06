@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Styles.css';
+
 import storage from '../contract/storage';
 import web3 from '../contract/web3';
 
@@ -14,7 +15,7 @@ const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
 });
 
-class EnrollForm extends Component {
+class Enroll extends Component {
   constructor(props) {
     super(props);
 
@@ -48,7 +49,8 @@ class EnrollForm extends Component {
 
     return (
       <div className="Enroll">
-        <form onSubmit={this.onSubmit} className="EnrollForm col-md-5">
+
+        <form onSubmit={this.onSubmit} className="EnrollForm col-md-4">
           <h3> Enroll </h3>
           <div className="form-group">
             <label>Address
@@ -77,92 +79,15 @@ class EnrollForm extends Component {
         </button>
           {error && <p>{error.message}</p>}
         </form>
+
         <div className="EnrollStatus col-md-8">
           <h3> Status </h3>
           <h6> {this.state.status} </h6>
         </div>
+
       </div>
     );
   }
 }
 
-export default EnrollForm;
-
-
-/* transactionHash: '',
-transactionIndex: '',
-blockHash: '',
-blockNumber: '',
-gasUsed: '',
-status: '' */
-
-
-/* class EnrollForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.State = {
-      address: '',
-      voterID: ''
-    };
-  }
-
-  addressChange = (event) => {
-    this.setState({ address: event.target.value })
-  }
-
-  voterIDChange = (event) => {
-    this.setState({ voterID: event.target.value })
-  }
-
-  onSubmit = (event) => {
-    const {
-      address,
-      voterID,
-      password,
-    } = this.state;
-  }
-
-  render() {
-    const {
-      address,
-      voterID,
-    } = this.State;
-
-    const isValid =
-      address === '' ||
-      voterID === '';
-
-    return (
-      <div className="EnrollForm col-md-4 offset-md-4">
-        <form onSubmit={this.onSubmit} className="EnrollFormForm">
-          <div className="form-group">
-            <label>Public Address
-            <input
-                value={address}
-                onChange={this.addressChange}
-                type="text"
-                className="form-control"
-                placeholder="Address"
-              />
-            </label>
-          </div>
-          <div className="form-group">
-            <label>Voter ID
-            <input
-                value={voterID}
-                onChange={this.voterIDChange}
-                type="text"
-                className="form-control"
-                placeholder="Voter ID"
-              />
-            </label>
-          </div>
-          <button disabled={isValid} type="submit" className="btn">
-            Sign Up
-          </button>
-        </form>
-      </div>
-    );
-  }
-} */
+export default Enroll;

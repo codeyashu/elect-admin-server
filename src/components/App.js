@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import './Styles.css';
 
-import EnrollForm from './EnrollForm';
+import Enroll from './Enroll';
 import StorageData from './StorageData';
-
 
 class App extends Component {
   render() {
-      return (
+    return (
       <div className="App container">
         <h1> Admin </h1>
-        <EnrollForm />
+        <Enroll />
         <StorageData />
       </div>
     );

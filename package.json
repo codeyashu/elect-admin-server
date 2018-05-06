@@ -1,5 +1,5 @@
 {
-  "name": "elect-enroll-server",
+  "name": "elect-admin-server",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
