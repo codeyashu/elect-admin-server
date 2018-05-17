@@ -1,0 +1,23 @@
+.Enroll {
+    display: flex;
+    flex-direction: row;
+}
+
+.EnrollForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #475B63;
+    margin: 10px 0px;
+    margin-right: 5px;
+    padding: 10px 0;
+}
+
+.EnrollStatus {
+    text-align: center;
+    border: 2px solid #475B63;
+    margin: 10px 0px;
+    margin-left: 5px;
+    padding: 10px 0;
+    overflow-wrap: break-word;
+}

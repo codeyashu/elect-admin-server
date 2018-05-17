@@ -1,0 +1,42 @@
+.header {
+    color: #729B79;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    color: #729B79;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+h3 {
+    color: #729B79;
+    padding: 10px 10px;
+}
+
+h5,
+h6 {
+    color: #BACDB0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.button {
+    padding: 10px 20px;
+    color: #BACDB0;
+    background-color: #729B79;
+}
+
+.form-control {
+    background-color: #E8E9F3;
+    color: #2E2C2F;
+    text-align: center;
+}
+
+.form-control:focus {
+    background-color: #E8E9F3;
+    border-color: #475B63;
+}

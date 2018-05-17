@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Styles.css';
+import './Enroll.css';
 
 import storage from '../contract/storage';
 import web3 from '../contract/web3';
@@ -51,10 +51,11 @@ class Enroll extends Component {
       <div className="Enroll">
 
         <form onSubmit={this.onSubmit} className="EnrollForm col-md-4">
-          <h3> Enroll </h3>
+          <h3>Enroll</h3>
           <div className="form-group">
-            <label>Address
-          <input
+            <label>
+              <h5>Address</h5>
+              <input 
                 value={address}
                 onChange={event => this.setState(byPropKey('address', event.target.value))}
                 type="text"
@@ -64,8 +65,9 @@ class Enroll extends Component {
             </label>
           </div>
           <div className="form-group">
-            <label>Voter ID
-          <input
+            <label>
+              <h5>Voter ID</h5>
+              <input
                 value={voterID}
                 onChange={event => this.setState(byPropKey('voterID', event.target.value))}
                 type="text"
@@ -74,15 +76,15 @@ class Enroll extends Component {
               />
             </label>
           </div>
-          <button disabled={isValid} type="submit" className="btn">
+          <button disabled={isValid} type="submit" className="btn button">
             Submit
-        </button>
+          </button>
           {error && <p>{error.message}</p>}
         </form>
 
         <div className="EnrollStatus col-md-8">
-          <h3> Status </h3>
-          <h6> {this.state.status} </h6>
+          <h3>Status</h3>
+          <h6>{this.state.status}</h6>
         </div>
 
       </div>

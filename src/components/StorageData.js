@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Styles.css';
+import './StorageData.css';
 
 import storage from '../contract/storage';
 
@@ -47,22 +47,23 @@ class StorageData extends Component {
       <div className="StorageData">
 
         <div className="ElectoralList col-md-5">
-          <h3> Electoral List </h3>
+          <h3>Electoral List</h3>
           {
             this.state.electoralList.map(element =>
-            <li key={element}>{element}</li>
+            <li key={element}><h6>{element}</h6></li>
           )}
         </div>
 
         <div className="ElectoralCount col-md-3">
-          <h3> Electoral Count </h3>
-          {this.state.electoralCount}
+          <h3>Electoral Count</h3>
+          <h2>{this.state.electoralCount}</h2>
         </div>
 
         <form onSubmit={this.onSubmit} className="GetIdForm col-md-4">
-          <h3> Get Voter Id </h3>
+          <h3>Get Voter Id</h3>
           <div className="form-group">
-            <label>Address
+            <label>
+              <h5>Address</h5>
               <input
                 value={address}
                 onChange={event => this.setState(byPropKey('address', event.target.value))}
@@ -72,10 +73,10 @@ class StorageData extends Component {
               />
             </label>
           </div>
-          <button disabled={isValid} type="submit" className="btn">
+          <button disabled={isValid} type="submit" className="btn button">
             Submit
           </button>
-          <span> <h2> {this.state.voterId} </h2> </span>
+          <div> <h2>{this.state.voterId}</h2> </div>
         </form>
 
       </div>
