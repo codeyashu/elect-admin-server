@@ -24,12 +24,17 @@ class Enroll extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-
+    this.setState({ status: "Waiting for transaction to be mined." });
     const accounts = await web3.eth.getAccounts();
-    const status = await storage.methods.registerOnce(this.state.address, this.state.voterID).send({
-      from: accounts[0]
-    });
-    this.setState({ status: JSON.stringify(status) });
+    try {
+      const status = await storage.methods.registerOnce(this.state.address, this.state.voterID).send({
+        from: accounts[0]
+      });
+      this.setState({ status: JSON.stringify(status) });
+    } catch (err) {
+      console.log(err);
+      this.setState({ status: "Error Registering: Duplicate address or Voter ID" });
+    }
   }
 
   render() {
@@ -55,7 +60,7 @@ class Enroll extends Component {
           <div className="form-group">
             <label>
               <h5>Address</h5>
-              <input 
+              <input
                 value={address}
                 onChange={event => this.setState(byPropKey('address', event.target.value))}
                 type="text"

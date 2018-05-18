@@ -21,7 +21,7 @@ class StorageData extends Component {
 
   async componentDidMount() {
     const electoralList = await storage.methods.getElectoral().call();
-    const electoralCount = await storage.methods.countElectoral().call();
+    const electoralCount = await storage.methods.getElectoralCount().call();
     this.setState({ electoralList, electoralCount });
   }
 
@@ -50,8 +50,8 @@ class StorageData extends Component {
           <h3>Electoral List</h3>
           {
             this.state.electoralList.map(element =>
-            <li key={element}><h6>{element}</h6></li>
-          )}
+              <li key={element}><h6>{element}</h6></li>
+            )}
         </div>
 
         <div className="ElectoralCount col-md-3">
