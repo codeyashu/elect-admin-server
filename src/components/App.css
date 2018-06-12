@@ -1,24 +1,24 @@
 .header {
     margin-top: 10px;
-    color: #729B79;
+    color: #F45B69;
     font-weight: bold;
     text-align: center;
 }
 
 h2 {
-    color: #729B79;
+    color: #FFFFFF;
     font-weight: bold;
     margin: 10px 0px;
 }
 
 h3 {
-    color: #729B79;
+    color: #FFFFFF;
     padding: 10px 10px;
 }
 
 h5,
 h6 {
-    color: #BACDB0;
+    color: #FFFFFF;
 }
 
 li {
@@ -28,7 +28,7 @@ li {
 .button {
     padding: 10px 20px;
     color: #BACDB0;
-    background-color: #729B79;
+    background-color: #FBFEF9;
 }
 
 .form-control {

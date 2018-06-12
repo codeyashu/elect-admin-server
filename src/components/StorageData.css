@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #475B63;
+    border: 3px solid #F45B69;
     margin-right: 3px;
     padding: 10px 0;
 }
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #475B63;
+    border: 3px solid #F45B69;
     margin: 0px 2px;
     height: 150px;
     padding: 10px 0;
@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #475B63;
+    border: 3px solid #F45B69;
     margin-left: 3px;
     height: 300px;
     padding: 10px 0;
